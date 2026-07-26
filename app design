@@ -1,0 +1,136 @@
+
+Action: view_file({"path":"/app/design_guidelines.json"})
+Observation: [Showing lines 1-132 of 132 total] /app/design_guidelines.json:
+1|{
+2|  "project_name": "Sweet 18 - Romantic Birthday Tribute",
+3|  "project_context": "An immersive, Awwwards-level single-page scroll experience. A heartfelt 18th birthday gift from a boyfriend to his girlfriend, Seftiana Alfah Keysa Syakurian Dini (called 'Sayangg').",
+4|  "visual_theme": "Cheerful and colorful but a little bit romantic. High-end editorial feel with playful pastel gradients, romantic typography, and intimate tactile elements like grain and soft shadows.",
+5|  "typography": {
+6|    "fonts": {
+7|      "heading": "Cormorant Garamond (Serif) - Elegant, romantic, and highly legible for large display sizes.",
+8|      "body": "Outfit (Sans-serif) - Friendly, geometric, and clean for modern readability.",
+9|      "accent": "Caveat (Handwriting) - Used exclusively for the term of endearment 'Sayangg', signatures, and playful annotations."
+10|    },
+11|    "scale": {
+12|      "h1": "text-5xl sm:text-6xl md:text-7xl tracking-tighter leading-none (used for '18' and Hero)",
+13|      "h2": "text-3xl sm:text-4xl md:text-5xl tracking-tight",
+14|      "h3": "text-2xl sm:text-3xl",
+15|      "body": "text-base md:text-lg leading-relaxed text-text-dark/80",
+16|      "accent": "text-2xl md:text-4xl text-primary-vibrant -rotate-2"
+17|    },
+18|    "import_instruction": "Import Cormorant Garamond, Outfit, and Caveat from Google Fonts in index.css."
+19|  },
+20|  "colors": {
+21|    "archetype": "Pastel & Soft + Romantic Contrast",
+22|    "palette": {
+23|      "background_base": "#FFF5F6",
+24|      "background_alt": "#FFEAF2",
+25|      "primary_vibrant": "#FF4D79",
+26|      "accent_yellow": "#FFDE59",
+27|      "accent_lavender": "#D6B4FC",
+28|      "text_dark": "#2E0A16",
+29|      "surface_glass": "rgba(255, 255, 255, 0.7)"
+30|    },
+31|    "rules": [
+32|      "No muddy grays. Tint all neutrals towards warm pink/rose.",
+33|      "Use primary_vibrant for CTAs and highlighted words.",
+34|      "Text must be text_dark for WCAG AA compliance against pastel backgrounds."
+35|    ]
+36|  },
+37|  "layout_and_spacing": {
+38|    "philosophy": "Generous Spacing + Asymmetric Romance",
+39|    "spacing_scale": "Use py-24, py-32 for sections to give breathing room. Container paddings must be generous (px-6 md:px-12).",
+40|    "grids": "Use The 'Bento' Grid Protocol for the gallery. Avoid perfect symmetry. Overlap text with image corners slightly to create editorial tension.",
+41|    "surfaces": "Use Crystal Glassmorphism (backdrop-blur-xl bg-white/70 border border-white/40 shadow-sm) for floating elements like the audio player and navigation. Never use completely transparent backgrounds over content."
+42|  },
+43|  "motion_and_interactions": {
+44|    "libraries_required": ["framer-motion", "lenis", "react-confetti", "lucide-react"],
+45|    "scroll_experience": "MUST implement lenis for smooth, momentum-based scrolling. This is critical for the premium feel.",
+46|    "hero_reveal": "Kinetic text reveal. Words slide up from masked overflow-hidden containers with a stagger effect.",
+47|    "parallax": "Use framer-motion useScroll and useTransform for gentle Y-axis parallax on gallery images.",
+48|    "micro_interactions": "Buttons must have a slight scale down on tap (scale: 0.95) and elegant hover states. Floating hearts on hover."
+49|  },
+50|  "media": {
+51|    "images": [
+52|      {
+53|        "url": "https://customer-assets-4nw71qhi.emergentagent.net/job_sweet-18-messages/artifacts/bhqzueub_IMG_3834_20260214_175400.webp",
+54|        "description": "Couple/portrait photo 1",
+55|        "category": "hero_or_gallery_primary"
+56|      },
+57|      {
+58|        "url": "https://customer-assets-4nw71qhi.emergentagent.net/job_sweet-18-messages/artifacts/pszm4y78_IMG_20260328_133406.webp",
+59|        "description": "Couple/portrait photo 2",
+60|        "category": "gallery"
+61|      },
+62|      {
+63|        "url": "https://customer-assets-4nw71qhi.emergentagent.net/job_sweet-18-messages/artifacts/fymno3ud_IMG_20260214_163306.webp",
+64|        "description": "Couple/portrait photo 3",
+65|        "category": "gallery"
+66|      },
+67|      {
+68|        "url": "https://customer-assets-4nw71qhi.emergentagent.net/job_sweet-18-messages/artifacts/d7cgnymr_IMG-20260530-WA0017.jpg",
+69|        "description": "Couple/portrait photo 4",
+70|        "category": "gallery"
+71|      },
+72|      {
+73|        "url": "https://customer-assets-4nw71qhi.emergentagent.net/job_sweet-18-messages/artifacts/zr57mfuz_IMG-20260511-WA0102.jpg",
+74|        "description": "Couple/portrait photo 5",
+75|        "category": "marquee"
+76|      }
+77|    ],
+78|    "audio": "Implement a background music feature for 'happy birthday to you'. Provide a floating toggle button (Crystal Glass style) fixed to bottom-right."
+79|  },
+80|  "sections_blueprint": [
+81|    {
+82|      "id": "floating-nav-audio",
+83|      "type": "Fixed Overlay",
+84|      "details": "Floating crystal glass pill at the bottom center or right. Contains the Audio Toggle (Play/Pause) and a quick 'Make a Wish' anchor link. Must have backdrop-blur-xl and solid text contrast."
+85|    },
+86|    {
+87|      "id": "hero",
+88|      "type": "Immersive Intro",
+89|      "details": "Trigger react-confetti on load. Centerpiece: A dramatic countdown/age reveal '17' rolling into '18'. Followed by staggered line-by-line reveal of 'Happy 18th Birthday,' and a large handwritten 'Sayangg' overlaying a soft, slowly moving pastel mesh background. Include subtle floating balloons/shapes."
+90|    },
+91|    {
+92|      "id": "the-manifesto",
+93|      "type": "Heartfelt Love Message",
+94|      "details": "Editorial layout. A beautiful reading experience. Break the Indonesian message ('selamat ulang tahun ke 18 yaaa sayanggkuuu...') into poetic stanzas. Use large Cormorant Garamond for the first sentence, scaling down to Outfit for the rest. Accentuate words like 'cintakuuu', 'maniskuuu' with the Caveat font in primary_vibrant color."
+95|    },
+96|    {
+97|      "id": "gallery-moments",
+98|      "type": "Parallax Photo Grid + Marquee",
+99|      "details": "Use the provided real photos. Create an asymmetric Bento grid with clipped frames (some rounded rectangles, some arches). Add slow Y-axis parallax. Include a slow horizontal marquee using react-fast-marquee for one or two of the photos and romantic text like 'My everything' rolling by."
+100|    },
+101|    {
+102|      "id": "guestbook",
+103|      "type": "Interactive Form & Wall",
+104|      "details": "A section to leave wishes. Use Shadcn Form components but heavily customize them to remove the 'SaaS' look (use rounded-2xl, soft pink borders, text-dark). Display submitted wishes as a masonry grid of glass cards. Form fields: Name, Message. Connect to standard state/mock DB for MVP."
+105|    }
+106|  ],
+107|  "accessibility_and_testing": {
+108|    "contrast": "Ensure all text on pastel gradients meets a minimum 4.5:1 ratio (APCA preferred). Use text-dark (#2E0A16).",
+109|    "testing": "All interactive elements, forms, and audio toggles MUST include data-testid (e.g., data-testid='audio-toggle-button', data-testid='wish-submit-button').",
+110|    "motion": "Respect prefers-reduced-motion for the confetti and parallax."
+111|  },
+112|  "instructions_to_main_agent": [
+113|    "You are building a premium, romantic birthday tribute. Do not make it look like a corporate dashboard.",
+114|    "USE HTML/TAILWIND directly for complex, asymmetric layouts instead of Shadcn Cards.",
+115|    "Use Framer Motion extensively for text reveals, scroll animations, and micro-interactions.",
+116|    "Use exact image URLs provided in the media section. Do not use placeholders.",
+117|    "Install lenis, framer-motion, react-confetti, react-fast-marquee, and lucide-react.",
+118|    "Build standard React components (.js or .jsx), not TypeScript."
+119|  ],
+120|  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+121|    "You tend to converge toward generic, 'on distribution' outputs. Avoid the 'AI slop' aesthetic. Create creative, distinctive frontends that surprise and delight.",
+122|    "Don't make generic centered layouts, simplistic gradients, and uniform styling. Use asymmetric grids.",
+123|    "Create depth through layered design elements with z-index hierarchy and glass-morphism (12-24px blur).",
+124|    "MUST NOT apply universal transition (transition: all). Use specific transitions to prevent breaking transforms.",
+125|    "MUST NOT center align the app container in App.css. Let content flow naturally.",
+126|    "Always use modern button styles (pill-shaped, slight hover scale) relevant to the aesthetic.",
+127|    "NEVER use emoji characters (🤖, etc.) as standalone icons. Use lucide-react.",
+128|    "Every interaction needs micro-animations. Static = dead.",
+129|    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+130|    "Use Sonner for toasts, and override Shadcn default rigidity where necessary to match the romantic theme."
+131|  ]
+132|}
+[End of file]
